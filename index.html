@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>BookNest - Online Book Store</title>
+  <link rel="stylesheet" href="style.css"/>
+
+</head>
+<body>
+  <nav class="navbar">
+    <div class="logo">📚 BookNest</div>
+    <ul class="nav-links">
+     <li><a href="#home">Home</a></li>
+      <li><a href="#books">Books</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li><a href="#wishlist" class="wishlist-link">❤️ Wishlist (<span id="wishlist-count">0</span>)</a></li>
+    </ul>
+  </nav>
+  <section class="hero" id="home">
+    <div class="hero-text">
+      <h1>Discover Your Next Favorite Book</h1>
+      <p>Explore thousands of books from different categories and build your own reading collection.</p>
+      <button onclick="document.getElementById('books').scrollIntoView()">Explore Books</button>
+    </div>
+    <div class="hero-image">
+      <img src="https://images.unsplash.com/photo-1512820790803-83ca734da794?q=80&w=1000&auto=format&fit=crop" alt="books" />
+    </div>
+  </section>
+
+ 
+  <section class="search-section">
+    <div class="search-container">
+      <input type="text" id="searchInput" placeholder="Search books by title or author..." />
+      <button onclick="searchBooks()">🔍 Search</button>
+    </div>
+  </section>
+
+ 
+  <section class="books-section" id="books">
+    <h2>Popular Books</h2>
+    <div class="book-container" id="bookContainer">
+      
+      <!-- BOOK CARD 1 -->
+      <div class="book-card" data-title="Atomic Habits" data-author="James Clear">
+        <img src="https://images.unsplash.com/photo-1544947950-fa07a98d237f?q=80&w=1000&auto=format&fit=crop" alt="book" />
+        <h3>Atomic Habits</h3>
+        <p><strong>Author:</strong> James Clear</p>
+        <p><strong>Price:</strong> ₹299</p>
+        <p class="description">Transform your habits and achieve your goals through small, consistent changes.</p>
+        <div class="book-buttons">
+          <button onclick="addToWishlist('Atomic Habits', 'James Clear')">❤️ Wishlist</button>
+          <button>🛒 Add to Cart</button>
+        </div>
+      </div>
+
+      
+      <div class="book-card" data-title="Rich Dad Poor Dad" data-author="Robert Kiyosaki">
+        <img src="https://images.unsplash.com/photo-1516979187457-637abb4f9353?q=80&w=1000&auto=format&fit=crop" alt="book" />
+        <h3>Rich Dad Poor Dad</h3>
+        <p><strong>Author:</strong> Robert Kiyosaki</p>
+        <p><strong>Price:</strong> ₹399</p>
+        <p class="description">Learn the secrets of financial independence and wealth building.</p>
+        <div class="book-buttons">
+          <button onclick="addToWishlist('Rich Dad Poor Dad', 'Robert Kiyosaki')">❤️ Wishlist</button>
+          <button>🛒 Add to Cart</button>
+        </div>
+      </div>
+
+      
+      <div class="book-card" data-title="The Psychology of Money" data-author="Morgan Housel">
+        <img src="https://images.unsplash.com/photo-1495446815901-a7297e633e8d?q=80&w=1000&auto=format&fit=crop" alt="book" />
+        <h3>The Psychology of Money</h3>
+        <p><strong>Author:</strong> Morgan Housel</p>
+        <p><strong>Price:</strong> ₹349</p>
+        <p class="description">Understand the psychology behind financial decisions and behavior.</p>
+        <div class="book-buttons">
+          <button onclick="addToWishlist('The Psychology of Money', 'Morgan Housel')">❤️ Wishlist</button>
+          <button>🛒 Add to Cart</button>
+        </div>
+      </div>
+
+      
+      <div class="book-card" data-title="The Alchemist" data-author="Paulo Coelho">
+        <img src="https://images.unsplash.com/photo-1507842217343-583f7270bfed?q=80&w=1000&auto=format&fit=crop" alt="book" />
+        <h3>The Alchemist</h3>
+        <p><strong>Author:</strong> Paulo Coelho</p>
+        <p><strong>Price:</strong> ₹249</p>
+        <p class="description">A philosophical adventure about following your dreams and destiny.</p>
+        <div class="book-buttons">
+          <button onclick="addToWishlist('The Alchemist', 'Paulo Coelho')">❤️ Wishlist</button>
+          <button>🛒 Add to Cart</button>
+        </div>
+      </div>
+
+      
+      <div class="book-card" data-title="Sapiens" data-author="Yuval Noah Harari">
+        <img src="https://images.unsplash.com/photo-1541961017774-22349e4a1262?q=80&w=1000&auto=format&fit=crop" alt="book" />
+        <h3>Sapiens</h3>
+        <p><strong>Author:</strong> Yuval Noah Harari</p>
+        <p><strong>Price:</strong> ₹549</p>
+        <p class="description">A brief history of humankind from the Stone Age to modern times.</p>
+        <div class="book-buttons">
+          <button onclick="addToWishlist('Sapiens', 'Yuval Noah Harari')">❤️ Wishlist</button>
+          <button>🛒 Add to Cart</button>
+        </div>
+      </div>
+
+     
+      <div class="book-card" data-title="1984" data-author="George Orwell">
+        <img src="https://images.unsplash.com/photo-1543002588-d83a5ad5f908?q=80&w=1000&auto=format&fit=crop" alt="book" />
+        <h3>1984</h3>
+        <p><strong>Author:</strong> George Orwell</p>
+        <p><strong>Price:</strong> ₹199</p>
+        <p class="description">A dystopian novel about totalitarianism and surveillance.</p>
+        <div class="book-buttons">
+          <button onclick="addToWishlist('1984', 'George Orwell')">❤️ Wishlist</button>
+          <button>🛒 Add to Cart</button>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  
+  <section class="wishlist-section" id="wishlist">
+    <div class="wishlist-container">
+      <h2>My Wishlist ❤️</h2>
+      <div id="wishlistDisplay">
+        <p class="empty-message">Your wishlist is empty. Add books to get started!</p>
+      </div>
+    </div>
+  </section>
+
+  
+  
+
+ 
+  <section class="contact-section" id="contact">
+    <h2>Contact Us</h2>
+    <form action="https://formspree.io/f/xojrgryr" method="POST" class="contact-form">
+      <input type="text" name="name" placeholder="Your Name" required />
+      <input type="email" name="email" placeholder="Your Email" required />
+      <textarea name="message" placeholder="Your Message or Query"></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </section>
+
+  
+  <footer>
+    <p>© 2026 BookNest - Your Online Book Store. All Rights Reserved.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
